@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-div {
+            flex: 1;
+        }
+
+        .right-div {
+            flex: 1;
+            text-align: right;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            background-image: url("C:\Users\junio\OneDrive\Desktop\Junior Year\Fall\Systems Design\Fridge_off_bg.jpeg");
+            background: rgb(223,221,249);
+            background: linear-gradient(90deg, rgba(223,221,249,1) 0%, rgba(241,226,2,1) 49%, rgba(0,212,255,1) 78%);
+            color: black;
+        }
+        .header_items{
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Distributes space evenly between the elements */
+            align-items: center;
+        }
+
+        .icon-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px; /* Adjust the gap as needed */
+        }
+
+        .icon {
+            text-align: center;
+        }
+
+        .icon img {
+            max-width: 50%;
+            max-height: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .icon-label {
+            text-align: center;
+            margin-top: 5px;
+        }
+        .display {
+        width: 100%;
+    }
+    .display img{
+        width: 100%;
+        max-width: inherit;
+    }
+
+    .button-50 {
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-50:focus {
+  text-decoration: none;
+}
+
+.button-50:hover {
+  text-decoration: none;
+}
+
+.button-50:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.button-50:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-div" id="left-div">
+            <img src="Closed_fridge.png" alt="Closed Fridge picture" width="500" height="600">
+        </div>
+        <div class="right-div" id="right-div">
+            <div class="header_items">
+                <b style="float: left;">11:55 AM</b>
+                <button class="button-50" role="button" style="float: center;" onclick="onclick()">OFF</button>
+                <b>33&#8451</b>
+
+            </div>
+            <div class="icon-container">
+                <div class="icon" onclick="showImage('object1')">
+                    <div class="icon-img">
+                        <img src="netflix icon.png" alt="Icon 1">
+                    </div>
+                    <div class="icon-label">Netflix</div>
+                </div>
+                <div class="icon" onclick="showImage('object2')">
+                    <div class="icon-img">
+                        <img src="browser_icon.png" alt="Icon 2">
+                    </div>
+                    <div class="icon-label">Chrome</div>
+                </div>
+                <div class="icon" onclick="showImage('object3')">
+                    <div class="icon-img">
+                        <img src="clock_icon.png" alt="Icon 3">
+                    </div>
+                    <div class="icon-label">Clock</div>
+                </div>
+                <div class="icon" onclick="showImage('object4')">
+                    <div class="icon-img">
+                        <img src="note_icon.jpg" alt="Icon 4">
+                    </div>
+                    <div class="icon-label">Notes</div>
+                </div>
+                <div class="icon" onclick="showImage('object5')">
+                    <div class="icon-img">
+                        <img src="weather_icon.png" alt="Icon 5">
+                    </div>
+                    <div class="icon-label">Weather</div>
+                </div>
+                <div class="icon" onclick="showImage('object6')" style="padding-top: 35px;">
+                    <div class="icon-img">
+                        <button class="button-50" role="button" onclick="openFridge()">Open Fridge</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="display" id="display_items">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+        function showImage(object) {
+            var displayDiv = document.getElementById("display_items");
+            
+            if (object === 'object1') {
+                displayDiv.innerHTML = `<img src="netflix_open.jpg" alt="Image 1">`;
+            } else if (object === 'object2') {
+                displayDiv.innerHTML = `<img src="browser_display.png" alt="Image 2">`;
+            }
+            else if (object === 'object3') {
+                displayDiv.innerHTML = `<img src="clock_display.jpg" alt="Image 3">`;
+            }
+            else if (object === 'object4') {
+                displayDiv.innerHTML = `<img src="note_diaplay.png" alt="Image 4">`;
+            }
+            else if (object === 'object5') {
+                displayDiv.innerHTML = `<img src="weather_display.png" alt="Image 5">`;
+            }
+
+        }
+        function onclick(){
+            var container = document.getElementById("right-div");
+            displayDiv.innerHTML = `<img src="Fridge_off_bg.jpeg" alt="Image 1">`;
+        }
+        function openFridge(){
+            var displayDiv = document.getElementById("left-div");
+
+            displayDiv.innerHTML = `<img src="OpenFridge.png" alt="Image 1">`;
+        }
+    
+</script>
+</html>
+
+
