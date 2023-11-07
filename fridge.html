@@ -102,6 +102,52 @@
   box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
   transform: translate(2px, 2px);
 }
+.hidden{
+    display: none;
+}
+.clock {
+    font-size: 50px;
+    font-family: 'Arial', sans-serif;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: black;
+}
     </style>
 </head>
 <body>
@@ -110,9 +156,10 @@
             <img src="Closed_fridge.png" alt="Closed Fridge picture" width="500" height="600">
         </div>
         <div class="right-div" id="right-div">
+            <div id="ON">
             <div class="header_items">
                 <b style="float: left;">11:55 AM</b>
-                <button class="button-50" role="button" style="float: center;" onclick="onclick()">OFF</button>
+                <button id="OnButton"class="button-50" role="button" style="float: center;" onclick="onclick()">OFF</button>
                 <b>33&#8451</b>
 
             </div>
@@ -139,7 +186,7 @@
                     <div class="icon-img">
                         <img src="note_icon.jpg" alt="Icon 4">
                     </div>
-                    <div class="icon-label">Notes</div>
+                    <div class="icon-label">shoping list</div>
                 </div>
                 <div class="icon" onclick="showImage('object5')">
                     <div class="icon-img">
@@ -152,9 +199,25 @@
                         <button class="button-50" role="button" onclick="openFridge()">Open Fridge</button>
                     </div>
                 </div>
-            </div>
-            <hr>
+                </div>
+                <hr>
             <div class="display" id="display_items">
+
+            </div>
+        </div>
+            <div id="off" class="hidden">
+                <button id="OnButton"class="button-50" role="button" style="float: center;" onclick="onclick()">ON</button>
+
+                <div class="dropdown" style="float: left;">
+                    <button class="dropbtn">33&#8451</button>
+                    <div class="dropdown-content">
+                    <a href="#">&#8457;</a>
+                    </div>
+                </div>
+
+                <div id="clock" class="clock" style="padding-top: 250px;padding-right: 150px;">
+                    12:00:00 AM
+                </div>
 
             </div>
         </div>
@@ -163,17 +226,44 @@
 <script>
         function showImage(object) {
             var displayDiv = document.getElementById("display_items");
-            
+            var textBox = document.createElement('input');
+            textBox.setAttribute('type', 'text');
+            textBox.value = '1.milk 2.eggs 3.cheese 4.tomatoes ';
+            textBox.style.width = '600px'; 
+            textBox.style.height = '100px'; 
             if (object === 'object1') {
                 displayDiv.innerHTML = `<img src="netflix_open.jpg" alt="Image 1">`;
             } else if (object === 'object2') {
                 displayDiv.innerHTML = `<img src="browser_display.png" alt="Image 2">`;
             }
             else if (object === 'object3') {
-                displayDiv.innerHTML = `<img src="clock_display.jpg" alt="Image 3">`;
+                displayDiv.innerHTML = `<div id="timer">1:00</div>`;
+                var timer = 60; // 60 seconds = 1 minute
+                    var timerSound = document.getElementById('timerSound');
+
+                    function startTimer() {
+                        var timerDisplay = document.getElementById('timer');
+                        var minutes, seconds;
+
+                        var countdown = setInterval(function () {
+                            minutes = Math.floor(timer / 60);
+                            seconds = timer % 60;
+
+                            if (timer < 0) {
+                                clearInterval(countdown);
+                                timerDisplay.textContent = "0:00";
+                                timerSound.play();
+                            } else {
+                                timerDisplay.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+                                timer--;
+                            }
+                        }, 1000);
+                    }
+
+                    startTimer();
             }
             else if (object === 'object4') {
-                displayDiv.innerHTML = `<img src="note_diaplay.png" alt="Image 4">`;
+                displayDiv.appendChild(textBox);
             }
             else if (object === 'object5') {
                 displayDiv.innerHTML = `<img src="weather_display.png" alt="Image 5">`;
@@ -185,10 +275,45 @@
             displayDiv.innerHTML = `<img src="Fridge_off_bg.jpeg" alt="Image 1">`;
         }
         function openFridge(){
-            var displayDiv = document.getElementById("left-div");
+            var displayDiv = document.getElementById("display_items");
+            var textBox = document.createElement('input');
+            textBox.setAttribute('type', 'text');
+            textBox.value = 'Milk,Eggs,Butter,Cheese,Yogurt,Fish and seafood,Leftover meals,Salad dressings,Fruit juices,Cold water,Tofu,Hummus ';
+            textBox.style.width = '600px'; 
+            textBox.style.height = '100px';
 
-            displayDiv.innerHTML = `<img src="OpenFridge.png" alt="Image 1">`;
+            displayDiv.appendChild(textBox);
         }
+var isdivisible=true;
+    document.getElementById('OnButton').addEventListener('click', function() {
+    var div1 = document.getElementById('ON');
+    var div2 = document.getElementById('off');
+
+    if (isdivisible) {
+        div1.style.display = 'none';
+        div2.style.display = 'block';
+    }else{
+        div1.style.display = 'block';
+        div2.style.display = 'none';
+    }
+});
+
+function updateClock() {
+    const clock = document.getElementById('clock');
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const meridiem = hours >= 12 ? 'PM' : 'AM';
+
+    clock.textContent = `${hours}:${minutes}:${seconds} ${meridiem}`;
+}
+
+// Call updateClock every second to keep the time updated
+setInterval(updateClock, 1000);
+
+// Initial call to set the time immediately
+updateClock();
     
 </script>
 </html>
