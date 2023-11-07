@@ -167,6 +167,7 @@
                 <div class="icon" onclick="showImage('object1')">
                     <div class="icon-img">
                         <img src="netflix icon.png" alt="Icon 1">
+                        <audio id="MovieAux" src="MovieSound.mp3"></audio>
                     </div>
                     <div class="icon-label">Netflix</div>
                 </div>
@@ -217,6 +218,8 @@
 
                 <div id="clock" class="clock" style="padding-top: 250px;padding-right: 150px;">
                     12:00:00 AM
+                    <audio id="timerSound" src="MovieSound.mp3"></audio>
+                    <audio id="timerSound" src="AlarmSound.mp3"></audio>
                 </div>
 
             </div>
@@ -231,8 +234,11 @@
             textBox.value = '1.milk 2.eggs 3.cheese 4.tomatoes ';
             textBox.style.width = '600px'; 
             textBox.style.height = '100px'; 
+
             if (object === 'object1') {
                 displayDiv.innerHTML = `<img src="netflix_open.jpg" alt="Image 1">`;
+                var x=getElementById("MovieAux");
+                displayDiv.x.play();
             } else if (object === 'object2') {
                 displayDiv.innerHTML = `<img src="browser_display.png" alt="Image 2">`;
             }
