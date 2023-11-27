@@ -1,0 +1,101 @@
+{
+    "courses": [
+      {
+        "courseID": 1,
+        "title": "Introduction to Computer Science",
+        "semester": "Fall 2023",
+        "professor": "Dr. Smith",
+        "book": {
+          "courseID": 1,
+          "ISBN": "1234567890",
+          "author": "John Doe",
+          "title": "Programming Fundamentals"
+        }
+      },
+      {
+        "courseID": 2,
+        "title": "Mathematics for Engineers",
+        "semester": "Fall 2023",
+        "professor": "Dr. Johnson",
+        "book": {
+          "courseID": 2,
+          "ISBN": "9876543210",
+          "author": "Jane Smith",
+          "title": "Advanced Calculus"
+        }
+      },
+      {
+        "courseID": 3,
+        "title": "History of Art",
+        "semester": "Fall 2023",
+        "professor": "Prof. Davis",
+        "book": {
+          "courseID": 3,
+          "ISBN": "6543210987",
+          "author": "Alice Johnson",
+          "title": "Art Through the Ages"
+        }
+      },
+      {
+        "courseID": 4,
+        "title": "Introduction to Psychology",
+        "semester": "Fall 2023",
+        "professor": "Dr. Anderson",
+        "book": {
+          "courseID": 4,
+          "ISBN": "0123456789",
+          "author": "Michael Smith",
+          "title": "Psychology Essentials"
+        }
+      },
+      {
+        "courseID": 5,
+        "title": "Environmental Science",
+        "semester": "Fall 2023",
+        "professor": "Dr. Taylor",
+        "book": {
+          "courseID": 5,
+          "ISBN": "0987654321",
+          "author": "Sarah Brown",
+          "title": "Environmental Studies"
+        }
+      },
+      {
+        "courseID": 6,
+        "title": "Business Ethics",
+        "semester": "Fall 2023",
+        "professor": "Prof. Martinez",
+        "book": {
+          "courseID": 6,
+          "ISBN": "5432109876",
+          "author": "Robert White",
+          "title": "Ethics in Business"
+        }
+      },
+      {
+        "courseID": 7,
+        "title": "Introduction to Sociology",
+        "semester": "Fall 2023",
+        "professor": "Dr. Brown",
+        "book": {
+          "courseID": 7,
+          "ISBN": "1357902468",
+          "author": "Emily Davis",
+          "title": "Sociology: A Brief Introduction"
+        }
+      },
+      {
+        "courseID": 8,
+        "title": "Chemistry for Beginners",
+        "semester": "Fall 2023",
+        "professor": "Prof. Wilson",
+        "book": {
+          "courseID": 8,
+          "ISBN": "2468013579",
+          "author": "David Johnson",
+          "title": "Basic Chemistry Concepts"
+        }
+      }
+    ]
+  }
+  
