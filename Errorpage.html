@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>Error</title>
+    </head>
+<style>
+    body{
+        background-color:#8B0000;
+        /*background-color: #3c6e71;*/
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .container {
+        display: flex;
+    }
+
+    .picture{
+        flex: 1; /* Take up all available space in the container */
+        text-align: center; /* Center the image horizontally */
+    }
+
+    .Text{
+        flex: 1; /* Take up all available space in the container */
+        font-family: DejaVu Sans Mono, monospace;
+        font-size: 50px; /* Adjust the font size as needed */
+        padding: 5px;
+        display: flex;
+        flex-direction: column; /* Align text vertically */
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
+        text-align: center; /* Center horizontally within each paragraph */
+        color:#b2f7ef;
+    }
+    .Home {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #3c6e71;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.Home:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+header {
+    background-color: #fdf0d5; /* Velvet Red */
+    padding: 10px;
+    color: #8B0000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #8B0000;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFD700; /* Change color on hover, e.g., gold */
+}
+
+/* Dropdown menu styles (you can customize this further) */
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #8B0000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Marist</div>
+            <ul class="nav-links">
+                <li><a href="Homepage.html">Homepage</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="Errorpage.html" class="active">About us</a></li>
+                <li><a href="Errorpage.html" class="active">Account</a></li>
+                <!-- Add other links as needed -->
+            </ul>
+        </nav>
+    </header>
+<div class="container">
+    <div class="Text">
+        <b>404 Error</b>
+        <p style="font-size: 20px;">can't find your page</p>
+        <p style="font-size: 20px;">in the meantime...</p>
+        <div>
+          <input type="submit" class="Home" value="Home">
+          <input type="submit" class="Home" value="Products">
+        </div>
+    </div>
+    <div class="picture">
+        <img src="error.jpeg" alt="Girl in a jacket" style="width: 100%;">
+    </div>
+</div>
+</body>
+</html>
+
+
+
