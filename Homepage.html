@@ -8,102 +8,120 @@
 </head>
 <style>
     body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-header {
-    background-color: #8B0000; /* Velvet Red */
-    padding: 10px;
-    color: white;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-right: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #FFD700; /* Change color on hover, e.g., gold */
-}
-
-/* Dropdown menu styles (you can customize this further) */
-.dropdown {
-    display: none;
-    position: absolute;
-    background-color: #8B0000;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.nav-links li:hover .dropdown {
-    display: block;
-}
-
-.info-tab {
-    background-color: #F5F5F5; /* Light Gray background for the info tab */
-    padding: 10px;
-}
-
-.ad-container {
-    overflow: hidden;
-}
-
-.ad {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    animation: scrollAds 10s linear infinite;
-}
-
-@keyframes scrollAds {
-    0% {
-        transform: translateX(100%);
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
     }
-    100% {
-        transform: translateX(-100%);
+
+    header {
+        background-color: #8B0000; /* Velvet Red */
+        padding: 10px;
+        color: white;
     }
-}
 
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.product-boxes {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-}
+    .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-.product-box {
-    text-align: center;
-}
+    .nav-links {
+        list-style: none;
+        display: flex;
+    }
 
-.product-box img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
+    .nav-links li {
+        margin-right: 20px;
+    }
 
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #FFD700; /* Change color on hover, e.g., gold */
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        background-color: #8B0000;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links li:hover .dropdown {
+        display: block;
+    }
+
+    .info-tab {
+        background-color: #F5F5F5;
+        padding: 10px;
+    }
+
+    .ad-container {
+        overflow: hidden;
+    }
+
+    .ad {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        animation: scrollAds 10s linear infinite;
+    }
+
+    @keyframes scrollAds {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .breadcrumbs {
+        background-color: #F5F5F5;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .breadcrumbs a {
+        text-decoration: none;
+        color: #333;
+        margin-right: 10px;
+    }
+
+    .breadcrumbs a:hover {
+        color: #8B0000;
+    }
+
+    .breadcrumbs span {
+        color: #8B0000;
+        margin-right: 10px;
+    }
+
+    .product-boxes {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+
+    .product-box {
+        text-align: center;
+    }
+
+    .product-box img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
 </style>
 <body>
 
@@ -115,7 +133,6 @@ nav {
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="Errorpage.html">About us</a></li>
                 <li><a href="Errorpage.html">Account</a></li>
-                <!-- Add other links as needed -->
             </ul>
         </nav>
     </header>
@@ -124,8 +141,15 @@ nav {
         <div class="ad-container">
             <div class="ad">Ad: Marist college Systems design</div>
             <div class="ad">Ad: Final project</div>
-            <!-- Add more ads as needed -->
         </div>
+    </div>
+
+    <div class="breadcrumbs">
+        <a href="#" class="breadcrumb">Home</a>
+        <span>&gt;</span>
+        <a href="courses.html" class="breadcrumb">Courses</a>
+        <span>&gt;</span>
+        <span>About us</span>
     </div>
 
     <div class="product-boxes">
