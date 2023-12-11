@@ -8,147 +8,163 @@
 </head>
 
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-header {
-    background-color: #8B0000; /* Velvet Red */
-    padding: 10px;
-    color: white;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-right: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #FFD700; /* Change color on hover, e.g., gold */
-}
-
-/* Dropdown menu styles (you can customize this further) */
-.dropdown {
-    display: none;
-    position: absolute;
-    background-color: #8B0000;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.nav-links li:hover .dropdown {
-    display: block;
-}
-
-.info-tab {
-    background-color: #F5F5F5; /* Light Gray background for the info tab */
-    padding: 10px;
-}
-
-.ad-container {
-    overflow: hidden;
-}
-
-.ad {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    animation: scrollAds 10s linear infinite;
-}
-
-@keyframes scrollAds {
-    0% {
-        transform: translateX(100%);
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
     }
-    100% {
-        transform: translateX(-100%);
+
+    header {
+        background-color: #8B0000;
+        padding: 10px;
+        color: white;
     }
-}
 
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-/* ... Your existing styles ... */
+    .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-.course-page {
-    margin: 20px;
-}
+    .nav-links {
+        list-style: none;
+        display: flex;
+    }
 
-.welcome-message {
-    background-color: #F5F5F5;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
+    .nav-links li {
+        margin-right: 20px;
+    }
 
-.course-box {
-    width: 100%; /* Take the whole width of the window */
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-}
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s ease;
+    }
 
-.course-box img {
-    width: 100%;
-    height: auto;
-    max-height: 200px; /* Set the maximum height as needed */
-    border-bottom: 1px solid #ccc;
-}
+    .nav-links a:hover {
+        color: #FFD700;
+    }
 
-.course-details {
-    display: none; /* Hide the course details by default */
-    padding: 10px;
-}
+    .dropdown {
+        display: none;
+        position: absolute;
+        background-color: #8B0000;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
-.course-box h3 {
-    padding: 10px;
-    margin: 0;
-}
+    .nav-links li:hover .dropdown {
+        display: block;
+    }
 
-.course-box a {
-    display: block;
-    text-decoration: none; /* Remove default underline */
-}
+    .info-tab {
+        background-color: #F5F5F5;
+        padding: 10px;
+    }
 
-.course-box button {
-    background-color: #8B0000;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    width: 100%;
-}
+    .ad-container {
+        overflow: hidden;
+    }
 
-.course-box button:hover {
-    background-color: #FFD700; /* Change color on hover, e.g., gold */
-}
+    .ad {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        animation: scrollAds 10s linear infinite;
+    }
 
-.course-box.active .course-details {
-    display: block; /* Show the course details when the box is active (clicked) */
-}
+    @keyframes scrollAds {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
 
+    .course-page {
+        margin: 20px;
+    }
+
+    .welcome-message {
+        background-color: #F5F5F5;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .course-box {
+        width: 100%;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .course-box img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .course-details {
+        display: none;
+        padding: 10px;
+    }
+
+    .course-box h3 {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .course-box a {
+        display: block;
+        text-decoration: none;
+    }
+
+    .course-box button {
+        background-color: #8B0000;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .course-box button:hover {
+        background-color: #FFD700;
+    }
+
+    .course-box.active .course-details {
+        display: block;
+    }
+
+    .breadcrumbs {
+        background-color: #F5F5F5;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .breadcrumbs a {
+        text-decoration: none;
+        color: #333;
+        margin-right: 10px;
+    }
+
+    .breadcrumbs a:hover {
+        color: #8B0000;
+    }
+
+    .breadcrumbs span {
+        color: #8B0000;
+        margin-right: 10px;
+    }
 </style>
 <body>
 
@@ -160,12 +176,16 @@ nav {
                 <li><a href="courses.html" class="active">Courses</a></li>
                 <li><a href="Errorpage.html" class="active">About us</a></li>
                 <li><a href="Errorpage.html" class="active">Account</a></li>
-                <!-- Add other links as needed -->
             </ul>
         </nav>
     </header>
-
     
+    <div class="breadcrumbs">
+        <a href="#" class="breadcrumb">Home</a>
+        <span>&gt;</span>
+        <a href="courses.html" class="breadcrumb">Courses</a>
+        <span>&gt;</span>
+        <span>About us</span>
     </div>
 
     <div class="course-page">
@@ -175,75 +195,67 @@ nav {
         <div class="course-boxes" id="courseBoxes">
            
             </div>
-            <!-- Add more course boxes as needed -->
         </div>
     </div>
     <script>
-       // Use async/await to fetch the JSON file
-async function fetchData() {
-    try {
-        const response = await fetch("https://ishejajunior.github.io/SD330/foxbooks.json");
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+        async function fetchData() {
+            try {
+                const response = await fetch("https://ishejajunior.github.io/SD330/foxbooks.json");
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
 
-        const data = await response.json();
-        const courses = data.courses;
-        const courseBoxes = document.getElementById('courseBoxes');
+                const data = await response.json();
+                const courses = data.courses;
+                const courseBoxes = document.getElementById('courseBoxes');
 
-        courses.forEach(course => {
-            const courseBox = document.createElement('div');
-            courseBox.className = 'course-box';
+                courses.forEach(course => {
+                    const courseBox = document.createElement('div');
+                    courseBox.className = 'course-box';
 
-            const image = document.createElement('img');
-            image.src = `course${course.courseID}.jpg`; // Assuming you have images named like course1.jpg, course2.jpg, etc.
-            image.alt = `Course ${course.courseID}`;
-            courseBox.appendChild(image);
+                    const image = document.createElement('img');
+                    image.src = `course${course.courseID}.jpg`;
+                    image.alt = `Course ${course.courseID}`;
+                    courseBox.appendChild(image);
 
-            const title = document.createElement('h3');
-            title.textContent = course.title;
-            courseBox.appendChild(title);
+                    const title = document.createElement('h3');
+                    title.textContent = course.title;
+                    courseBox.appendChild(title);
 
-            const button = document.createElement('button');
-            button.textContent = 'Show Details';
-            button.addEventListener('click', () => toggleDetails(courseBox));
-            courseBox.appendChild(button);
+                    const button = document.createElement('button');
+                    button.textContent = 'Show Details';
+                    button.addEventListener('click', () => toggleDetails(courseBox));
+                    courseBox.appendChild(button);
 
-            const details = document.createElement('div');
-            details.className = 'course-details';
+                    const details = document.createElement('div');
+                    details.className = 'course-details';
 
-            // Check if 'books' property exists before accessing its subproperties
-            if (course.books && course.books.length > 0) {
-                details.innerHTML = '<p>Books:</p>';
-                course.books.forEach(book => {
-                    details.innerHTML += `
-                        <p>Book ISBN: ${book.ISBN}</p>
-                        <p>Book Author: ${book.author}</p>
-                        <p>Book Title: ${book.title}</p>
-                    `;
+                    if (course.books && course.books.length > 0) {
+                        details.innerHTML = '<p>Books:</p>';
+                        course.books.forEach(book => {
+                            details.innerHTML += `
+                                <p>Book ISBN: ${book.ISBN}</p>
+                                <p>Book Author: ${book.author}</p>
+                                <p>Book Title: ${book.title}</p>
+                            `;
+                        });
+                    } else {
+                        details.innerHTML = '<p>No book details available</p>';
+                    }
+
+                    courseBox.appendChild(details);
+                    courseBoxes.appendChild(courseBox);
                 });
-            } else {
-                details.innerHTML = '<p>No book details available</p>';
+            } catch (error) {
+                console.error('Error fetching/parsing JSON:', error);
             }
-
-            courseBox.appendChild(details);
-            courseBoxes.appendChild(courseBox);
-        });
-    } catch (error) {
-        console.error('Error fetching/parsing JSON:', error);
-    }
-}
-
+        }
 
         function toggleDetails(courseBox) {
             courseBox.classList.toggle('active');
         }
 
-        // Call the function to fetch and display data
         fetchData();
     </script>
-
-    
-    
 </body>
 </html>
